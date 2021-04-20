@@ -10,15 +10,14 @@ cursor = conn.cursor()
 #
 # print('1\n', cursor.fetchall())
 
-# 2
-# cursor.execute("SELECT SUBSTR(NAME, 1, 1) || '.' || SURNAME ||' Место жительства-'|| CITY || '; родился-' || MONTH(birthday) FROM STUDENT LIMIT 1")
-# print('2\n', cursor.fetchall())
+# 2 cursor.execute("SELECT SUBSTR(NAME, 1, 1) || '.' || SURNAME ||' Место жительства-'|| CITY || '; родился-' ||
+# MONTH(birthday) FROM STUDENT LIMIT 1") print('2\n', cursor.fetchall())
 
 cursor.execute("select concat(name |''| surname |''| kurs |''| 'курс') FROM STUDENT")
 print('3\n', cursor.fetchall())
 
-# cursor.execute("select student_id, AVG(mark) FROM exam_marks GROUP BY (student_id) JOIN students where exam_marks.student_id = students.id")
-# print('4\n', cursor.fetchall())
+# cursor.execute("select student_id, AVG(mark) FROM exam_marks GROUP BY (student_id) JOIN students where
+# exam_marks.student_id = students.id") print('4\n', cursor.fetchall())
 
 
 conn.close()
